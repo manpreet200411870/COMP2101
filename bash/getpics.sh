@@ -5,13 +5,14 @@ test -d ~/Pictures || mkdir ~/Pictures
 
 #Download the zip file of pictures to the Pictures directory
 test -f ~/Pictures/pics.zip || wget -q -0 ~/Pictures/pics.zip http://zonzorp.net/pics.zip
-
+test -f ~/Pictures/pics.tgz || wget -q -0 ~/Pictures/pics.zip http://zonzorp.net/pics.tgz
 
 #unpack the downloaded files
-test -f ~/pictures/pics.zip && unzip -d ~/Pictures -0 -q ~/Pictures/pics.zip && rm ~/Pictures/pics.zip
-test -f ~/pictures/pics.tgz && unzip -d ~/Pictures -0 -q ~/Pictures/pics.tgz && rm ~/Pictures/pics.tgz
+test -f ~/Pictures/pics.zip && unzip -d ~/Pictures -0 -q ~/Pictures/pics.zip && rm ~/Pictures/pics.zip
+test -f ~/Pictures/pics.tgz && unzip -d ~/Pictures -0 -q ~/Pictures/pics.tgz && rm ~/Pictures/pics.tgz
 
-
+#tarfile
+test -f ~/Pictures/pics.tgz && tar -xzf ~/Pictures/pics.tgz -C ~Pictures/&& rm ~/Pictures/pics.tgz
 
 #Making a reprt on what we have in the Pictures directory
 test -d ~/Pictures && cat <<EOF
