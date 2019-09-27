@@ -16,7 +16,6 @@
 echo "Rolling..."
 sides=6
 bias=1
-RANDOM=$RANDOM
 # roll the dice and save the results
 die1=$(( RANDOM % sides + bias))
 die2=$(( RANDOM % sides + bias ))
